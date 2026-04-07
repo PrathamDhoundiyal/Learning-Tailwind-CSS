@@ -11,41 +11,60 @@ function App() {
        1-->Simulating a Navbar  Flexbox
        2---> Basic Cards Cssgrid
        3-->Media Queries
+       4-->Dark and Light Mode
 
        */
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState("dark");
+
   return (
-    <div>
+    <div className={`${theme} min-h-screen dark:text-white dark:bg-slate-900 text-slate-900`}>
       {/* Navbar */}
-      <div className="flex px-4 bg-slate-900 h-12 items-center justify-between">
-        <div className="text-white">Logo</div>
+      <div className="flex text-xl font-bold px-4  h-12 items-center justify-between">
+        <div className="">Logo</div>
 
         {/* Desktop Navbar */}
         <div className="hidden sm:flex gap-2">
-          <span className="text-white">Home</span>
-          <span className="text-white">About</span>
-          <span className="text-white">Contact</span>
+          <span className="">Home</span>
+          <span className="">About</span>
+          <span className="">Contact</span>
+            <button
+            className="text-white text-xl cursor-pointer"
+            onClick={() => setTheme(theme === "light"? "dark": "light")}
+          >
+            {(theme === "light" ? "🌙" : "☀️")} 
+          </button>
         </div>
 
         <button
-          className="text-white text-xl cursor-pointer sm:hidden"
-          onClick={() => setOpen(!open)}>
+          className="text-xl cursor-pointer sm:hidden"
+          onClick={() => setOpen(!open)}
+        >
           ☰
         </button>
+      
       </div>
+      
 
-       {/* Mobile Navbar */}
+      {/* Mobile Navbar */}
 
-        {open && (
-          <div className="flex flex-col items-center p-4  text-lg gap-2  bg-slate-900 text-white sm:hidden">
-            <span className="">Home</span>
-            <span className="">About</span>
-            <span className="">Contact</span>
-          </div>
-        )}
+      {open && (
+        <div className="flex flex-col items-center p-4  text-lg gap-2   dark:bg-slate-900  text-slate-900 dark:text-white  sm:hidden">
+          <span className="">Home</span>
+          <span className="">About</span>
+          <span className="">Contact</span>
+
+          <button
+            className="text-white text-xl cursor-pointer sm:hidden"
+            onClick={() => setTheme(theme === "light"? "dark": "light")}
+          >
+            {(theme === "light" ? "🌙" : "☀️")} 
+          </button>
+        </div>
+      )}
 
       {/* Grid  */}
-      <div className="grid grid-cols-1 gap-4 p-3 text-white text-center text-2xl sm:text-lg sm:grid-cols-2 md:text-sm md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 p-3  dark:text-white dark:bg-slate-900 text-white text-center text-2xl sm:text-lg sm:grid-cols-2 md:text-sm md:grid-cols-3">
         <div className="hover:bg-slate-800  bg-slate-500 rounded p-1">
           Feature 1
         </div>

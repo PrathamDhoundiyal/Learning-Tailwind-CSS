@@ -18,7 +18,7 @@ function App() {
   const [theme, setTheme] = useState("dark");
 
   return (
-    <div className={`${theme} min-h-screen dark:text-white dark:bg-slate-900 text-slate-900`}>
+    <div className={`${theme} min-h-screen dark:text-primary dark:bg-background text-slate-900`}>
       {/* Navbar */}
       <div className="flex text-xl font-bold px-4  h-12 items-center justify-between">
         <div className="">Logo</div>

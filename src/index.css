@@ -6,3 +6,27 @@
     --color-background: #050030;
     --color-primary: #ebebed;
 }
+
+
+@layer base{
+    p{
+        @apply text-2xl text-amber-600 hover:text-white;
+    }
+
+      button{ 
+        @apply cursor-pointer transition-all bg-blue-500 text-white px-6 py-2 rounded-lg border-blue-600
+                       border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
+                      active:border-b-[2px] active:brightness-90 active:translate-y-[2px];
+      }
+}
+
+@layer components{
+    .card{
+        @apply flex flex-col  justify-center items-center h-[300px] w-[350px] bg-amber-300 rounded-xl hover:bg-amber-700;
+    }
+}
+
+
+@utility flex-center{
+    @apply flex justify-center items-center
+}

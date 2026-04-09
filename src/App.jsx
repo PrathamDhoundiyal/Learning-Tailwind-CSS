@@ -18,7 +18,9 @@ function App() {
   const [theme, setTheme] = useState("dark");
 
   return (
-    <div className={`${theme} min-h-screen dark:text-primary dark:bg-background text-slate-900`}>
+    <div
+      className={`${theme} min-h-screen dark:text-primary dark:bg-background text-slate-900`}
+    >
       {/* Navbar */}
       <div className="flex text-xl font-bold px-4  h-12 items-center justify-between">
         <div className="">Logo</div>
@@ -28,11 +30,11 @@ function App() {
           <span className="">Home</span>
           <span className="">About</span>
           <span className="">Contact</span>
-            <button
+          <button
             className="text-white text-xl cursor-pointer"
-            onClick={() => setTheme(theme === "light"? "dark": "light")}
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           >
-            {(theme === "light" ? "🌙" : "☀️")} 
+            {theme === "light" ? "🌙" : "☀️"}
           </button>
         </div>
 
@@ -42,9 +44,7 @@ function App() {
         >
           ☰
         </button>
-      
       </div>
-      
 
       {/* Mobile Navbar */}
 
@@ -56,9 +56,9 @@ function App() {
 
           <button
             className="text-white text-xl cursor-pointer sm:hidden"
-            onClick={() => setTheme(theme === "light"? "dark": "light")}
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           >
-            {(theme === "light" ? "🌙" : "☀️")} 
+            {theme === "light" ? "🌙" : "☀️"}
           </button>
         </div>
       )}
@@ -82,6 +82,31 @@ function App() {
         </div>
         <div className="hover:bg-slate-800  bg-slate-500 rounded p-1">
           Feature 6
+        </div>
+      </div>
+
+      {/*Using Directive and Custom Styles*/}
+
+ {/* Without Directives */}
+
+      {/* <div className="flex justify-center items-center">
+        <div className=" group flex flex-col  justify-center items-center h-[300px] w-[350px] bg-amber-300 rounded-xl hover:bg-amber-700 ">
+          <p className="">This is a Card</p>
+          <button className="tcursor-pointer transition-all bg-blue-500 text-white px-6 py-2 rounded-lg
+border-blue-600
+border-b-[4px] hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
+active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
+            Click Here!!
+          </button>
+        </div>
+      </div> */}
+
+{/* With Directives */} 
+
+      <div className="flex-center">
+        <div className="card">
+          <p className="">This is a Card</p>
+          <button>Click Here!!</button>
         </div>
       </div>
     </div>

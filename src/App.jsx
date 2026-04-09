@@ -12,6 +12,7 @@ function App() {
        2---> Basic Cards Cssgrid
        3-->Media Queries
        4-->Dark and Light Mode
+       5-->Directives
 
        */
   const [open, setOpen] = useState(false);
